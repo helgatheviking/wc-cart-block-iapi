@@ -1,0 +1,41 @@
+{
+	"name": "woocommerce/cart-items-redux",
+
+	"title": "Cart Items Redux",
+	"description": "Block containing cart items.",
+	"category": "woocommerce",
+	"supports": {
+		"align": false,
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"inserter": false,
+		"lock": false
+	},
+	"attributes": {
+		"cartItems": {
+			"type": "array"
+		},
+		"lock": {
+			"type": "object",
+			"default": {
+				"remove": true,
+				"move": true
+			}
+		}
+	},
+	"providesContext": {
+		"woocommerce/previewCartItems": "cartItems",
+		"query": "query",
+		"displayLayout": "displayLayout",
+		"enhancedPagination": "enhancedPagination"
+	},
+	"parent": [
+		"woocommerce/filled-cart-block"
+	],
+	"textdomain": "woocommerce",
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

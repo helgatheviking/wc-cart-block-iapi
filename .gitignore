@@ -1,0 +1,10 @@
+bak/
+build/
+deploy/
+languages/
+node_modules/
+vendor/
+bookmarks.json
+composer.lock
+package-lock.json
+*.bak

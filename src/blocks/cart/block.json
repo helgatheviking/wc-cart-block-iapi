@@ -1,0 +1,17 @@
+{
+    "name": "woocommerce/cart-redux",
+    "title": "Cart Redux",
+    "description": "Shopping cart with interactivity API",
+    "apiVersion": 3,
+    "category": "woocommerce",
+    "icon": "cart",
+    "supports": {
+      "html": false,
+      "multiple": false,
+      "interactivity": true,
+      "inserter": true
+    },
+    "style": "file:./style-view.css",
+    "editorScript": "file:./index.js",
+    "viewScriptModule": "file:./view.js"
+  }

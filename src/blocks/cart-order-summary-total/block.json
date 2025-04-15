@@ -1,0 +1,15 @@
+{
+    "name": "woocommerce/cart-order-summary-total-block",
+    "title": "Cart Order Summary Total",
+    "description": "Shopping cart total",
+    "apiVersion": 3,
+    "category": "woocommerce",
+    "icon": "cart",
+    "supports": {
+      "html": false,
+      "multiple": false,
+      "inserter": false
+    },
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
+  }

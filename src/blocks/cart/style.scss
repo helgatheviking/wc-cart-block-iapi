@@ -1,0 +1,22 @@
+.wc-cart-iapi {
+	position: relative;
+
+	&.is-updating > div:not(.wc-block-components-spinner) {
+		opacity: 0.3;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.wc-block-cart-items__header h2 {
+		font-size: .75em;
+		font-weight: 700;
+		color: var(--wp--preset--color--contrast);
+  		font-family: var(--wp--preset--font-family--body);
+		text-transform: uppercase;
+		margin: 0;
+  		padding: 8px 16px 8px 0;
+	}
+
+}

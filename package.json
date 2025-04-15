@@ -1,0 +1,29 @@
+{
+	"name": "wc-cart-block-iapi",
+	"version": "0.1.0-alpha",
+	"description": "Cart block with interactivity API",
+	"author": "helgatheviking",
+	"license": "GPL-3.0",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --source-path=src/blocks --webpack-copy-php --experimental-modules",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start --source-path=src/blocks --webpack-copy-php --experimental-modules",
+		"zip": "wp-scripts plugin-zip"
+	},
+	"devDependencies": {
+		"@woocommerce/dependency-extraction-webpack-plugin": "^3.1.0",
+		"@wordpress/scripts": "^30.14.1"
+	},
+	"dependencies": {
+		"@woocommerce/settings": "^1.0.0",
+		"@wordpress/icons": "^10.21.0",
+		"clsx": "^2.1.1",
+		"dinero.js": "^1.9.1",
+		"md5": "^2.3.0",
+		"use-debounce": "^10.0.4"
+	}
+}
