@@ -7,7 +7,7 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build --source-path=src/blocks --webpack-copy-php --experimental-modules",
-		"format": "wp-scripts format",
+		"format": "wp-scripts format ./src",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
