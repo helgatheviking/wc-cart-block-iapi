@@ -8,8 +8,7 @@
  * Author:            helgatheviking
  * License:           GPL-3.0
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       wc-cart-block-redux
- * Domain Path:       wc-cart-block-redux
+ * Text Domain:       wc-cart-block-iapi
  * Update URI:        http://github.com
  *
  * @package WcCartBlock
@@ -93,6 +92,15 @@ add_action(
 	}
 );
 
+/**
+ * Load the plugin textdomain for translations.
+ */
+add_action(
+	'init',
+	function () {
+		load_plugin_textdomain( 'wc-cart-block-iapi', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
+);
 
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
