@@ -12,10 +12,10 @@
  * Domain Path:       wc-cart-block-redux
  * Update URI:        http://github.com
  *
- * @package WcCartBlockRedux
+ * @package WcCartBlock
  */
 
-namespace Backcourt\WcCartBlockRedux;
+namespace Backcourt\WcCartBlock\iAPI;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -35,27 +35,63 @@ function get_path() {
 }
 
 /**
+ * Check if the autoloader exists.
+ * If it does, require it.
+ * If it does not, show an admin notice and deactivate the plugin.
+ */
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+
+	// If the autoloader exists, require it.
+	// This is used for Composer dependencies.
+	include_once __DIR__ . '/vendor/autoload.php';
+} else {
+	// If the autoloader does not exist, deactivate the plugin and show an admin notice.
+	add_action(
+		'admin_notices',
+		function () {
+			echo '<div class="notice notice-error"><p>' . esc_html__( 'WC Mix and Match - Interactivity API error: Required dependencies are not installed. Please run <code>composer install</code> in the plugin directory.', 'wc-cart-block-iapi' ) . '</p></div>';
+		}
+	);
+	// Deactivate the plugin to prevent fatal errors.
+	add_action(
+		'admin_init',
+		function () {
+			deactivate_plugins( plugin_basename( __FILE__ ) );
+		}
+	);
+	return;
+}
+
+/**
  * Require all includes.
  */
-foreach ( glob( get_path() . 'includes/*.php', GLOB_BRACE ) as $file ) {
-	require_once $file;
-}
+Cart::attach_hooks();
+CartCrossSells::attach_hooks();
+CartLineItemTemplate::attach_hooks();
+CartOrderSummary::attach_hooks();
+CartOrderSummarySubtotal::attach_hooks();
+CartOrderSummaryTaxes::attach_hooks();
+EmptyCart::attach_hooks();
+FilledCart::attach_hooks();
+ProceedToCheckout::attach_hooks();
 
 /**
  * Declare WooCommerce Features compatibility.
  */
-add_action( 'before_woocommerce_init', function() {
-	if ( ! class_exists( 'Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
-		return;
+add_action(
+	'before_woocommerce_init',
+	function () {
+		if ( ! class_exists( 'Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			return;
+		}
+
+		// HPOS (Custom Order tables) compatibility.
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', plugin_basename( __FILE__ ), true );
+
+		// Cart and Checkout Blocks.
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'cart_checkout_blocks', plugin_basename( __FILE__ ), true );
 	}
-
-	// HPOS (Custom Order tables) compatibility.
-	\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', plugin_basename( __FILE__ ), true );
-
-	// Cart and Checkout Blocks.
-	\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'cart_checkout_blocks', plugin_basename( __FILE__ ), true );
-
-} );
+);
 
 
 /**
