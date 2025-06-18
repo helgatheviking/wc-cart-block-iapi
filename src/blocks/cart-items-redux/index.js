@@ -17,11 +17,11 @@ import './editor.scss';
 const save = () => {
 	const blockProps = useBlockProps.save();
 
-        return (
-            <div { ...blockProps }>
-                <InnerBlocks.Content />
-            </div>
-        );
+	return (
+		<div { ...blockProps }>
+			<InnerBlocks.Content />
+		</div>
+	);
 };
 
 registerBlockType( metadata, {
@@ -35,7 +35,7 @@ registerBlockType( metadata, {
         );
 	},
     */
-    edit: Edit,
+	edit: Edit,
 	icon: <Icon icon={ postList } />,
 	save,
 } );

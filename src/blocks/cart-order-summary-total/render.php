@@ -3,7 +3,7 @@
  * Server rendering for the Cart Order Summary Total block.
  *
  * @package WooCommerce/blocks
- * 
+ *
  * @param array $attributes - The block attributes.
  * @param string $content - The block default content.
  * @param WP_Block $block - The block instance.

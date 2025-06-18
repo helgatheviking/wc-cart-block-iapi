@@ -10,23 +10,23 @@ import { getSetting } from '@woocommerce/settings';
 import { API_SITE_CURRENCY, displayForMinorUnit } from './utils';
 
 // Get local pickup locations from the settings and format into some preview shipping rates for the response.
-const localPickupEnabled = getSetting('localPickupEnabled', false);
+const localPickupEnabled = getSetting( 'localPickupEnabled', false );
 const localPickupTitle = getSetting(
 	'localPickupText',
 	__( 'Local pickup', 'woocommerce' )
 );
-const localPickupCost = getSetting('localPickupCost', '');
+const localPickupCost = getSetting( 'localPickupCost', '' );
 const localPickupLocations = localPickupEnabled
-	? getSetting('localPickupLocations', [])
+	? getSetting( 'localPickupLocations', [] )
 	: [];
 
 const localPickupRates = localPickupLocations
-	? Object.values(localPickupLocations).map((location, index) => ({
+	? Object.values( localPickupLocations ).map( ( location, index ) => ( {
 			...API_SITE_CURRENCY,
 			name: `${ localPickupTitle } (${ location.name })`,
 			description: '',
 			delivery_time: '',
-			price: displayForMinorUnit(localPickupCost, 0) || '0',
+			price: displayForMinorUnit( localPickupCost, 0 ) || '0',
 			taxes: '0',
 			rate_id: `pickup_location:${ index + 1 }`,
 			instance_id: index + 1,
@@ -46,7 +46,7 @@ const localPickupRates = localPickupLocations
 			],
 			method_id: 'pickup_location',
 			selected: false,
-		}))
+	  } ) )
 	: [];
 
 export const previewShippingRates = [
@@ -87,7 +87,7 @@ export const previewShippingRates = [
 				name: __( 'Flat rate shipping', 'woocommerce' ),
 				description: '',
 				delivery_time: '',
-				price: displayForMinorUnit('500'),
+				price: displayForMinorUnit( '500' ),
 				taxes: '0',
 				rate_id: 'flat_rate:0',
 				instance_id: 0,

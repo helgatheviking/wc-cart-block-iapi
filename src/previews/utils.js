@@ -20,16 +20,18 @@ export const API_SITE_CURRENCY = {
 /**
  * Preview data is defined with 2dp. This converts to selected currency settings.
  */
-export const displayForMinorUnit = (value, precision = 2) => {
+export const displayForMinorUnit = ( value, precision = 2 ) => {
 	const minorUnit = SITE_CURRENCY.minorUnit;
 
 	// Preview data is defined with 2 dp.
-	if (minorUnit === precision || !value) {
+	if ( minorUnit === precision || ! value ) {
 		return value;
 	}
 
-	const multiplier = Math.pow(10, minorUnit);
-	const intValue = Math.round(parseInt(value, 10) / Math.pow(10, precision));
+	const multiplier = Math.pow( 10, minorUnit );
+	const intValue = Math.round(
+		parseInt( value, 10 ) / Math.pow( 10, precision )
+	);
 
-	return (intValue * multiplier).toString();
+	return ( intValue * multiplier ).toString();
 };

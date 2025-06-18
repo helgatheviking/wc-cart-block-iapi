@@ -25,7 +25,6 @@ import metadata from './block.json';
 
 registerBlockType( metadata.name, {
 	edit: ( { context: { 'woocommerce/cartItem': cartItem } } ) => {
-
 		const blockProps = useBlockProps( {
 			className: 'wc-block-cart-item__prices',
 		} );
@@ -43,7 +42,6 @@ registerBlockType( metadata.name, {
 
 		return (
 			<div { ...blockProps }>
-
 				<FormattedMonetaryAmount
 					currency={ priceCurrency }
 					className="wc-block-price-filter__amount wc-block-price-filter__amount--min wc-block-form-text-input wc-block-components-price-slider__amount wc-block-components-price-slider__amount--min"
@@ -52,8 +50,7 @@ registerBlockType( metadata.name, {
 						priceCurrency
 					) }
 				/>
-
 			</div>
 		);
-	}
+	},
 } );

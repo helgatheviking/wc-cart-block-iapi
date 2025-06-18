@@ -22,9 +22,7 @@
 		}
 	},
 	"usesContext": [ "woocommerce/cartItem", "cartKey" ],
-	"parent": [
-		"woocommerce/cart-line-item-template"
-	],
+	"parent": [ "woocommerce/cart-line-item-template" ],
 	"textdomain": "woocommerce",
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,

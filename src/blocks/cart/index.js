@@ -9,17 +9,17 @@ import { __ } from '@wordpress/i18n';
  */
 import './style.scss';
 
-registerBlockVariation('woocommerce/cart', {
+registerBlockVariation( 'woocommerce/cart', {
 	name: 'cart-iapi',
-	title: __('Cart with iAPI', 'woocommerce'),
+	title: __( 'Cart with iAPI', 'woocommerce' ),
 	icon: 'cart',
 	attributes: {
 		align: 'wide',
 		className: 'wc-cart-iapi',
 	},
-	scope: ['inserter'],
+	scope: [ 'inserter' ],
 	innerBlocks: [
-		[ 
+		[
 			'woocommerce/filled-cart-block',
 			{},
 			[
@@ -38,18 +38,22 @@ registerBlockVariation('woocommerce/cart', {
 									'core/column',
 									{
 										verticalAlignment: 'top',
-										width: '20%'
+										width: '20%',
 									},
 									[
 										[
 											'core/heading',
 											{
 												level: 2,
-												content: __('Product', 'woocommerce'),
-												className: 'wc-block-cart-items__header-product',
+												content: __(
+													'Product',
+													'woocommerce'
+												),
+												className:
+													'wc-block-cart-items__header-product',
 											},
 										],
-									]
+									],
 								],
 								[
 									'core/column',
@@ -59,20 +63,24 @@ registerBlockVariation('woocommerce/cart', {
 									'core/column',
 									{
 										verticalAlignment: 'top',
-										width: '20%'
+										width: '20%',
 									},
 									[
 										[
 											'core/heading',
 											{
 												level: 2,
-												content: __('Total', 'woocommerce'),
-												className: 'wc-block-cart-items__header-total',
+												content: __(
+													'Total',
+													'woocommerce'
+												),
+												className:
+													'wc-block-cart-items__header-total',
 											},
 										],
-									]
-								]
-							]
+									],
+								],
+							],
 						],
 						[
 							'woocommerce/cart-line-item-template',
@@ -84,43 +92,72 @@ registerBlockVariation('woocommerce/cart', {
 									[
 										[
 											'core/column',
-											{ verticalAlignment: 'top', width: '20%' },
+											{
+												verticalAlignment: 'top',
+												width: '20%',
+											},
 											[
-												[ 'woocommerce/cart-line-item-image', {} ]
-											]
+												[
+													'woocommerce/cart-line-item-image',
+													{},
+												],
+											],
 										],
 										[
 											'core/column',
-											{ verticalAlignment: 'top', width: '60%' },
+											{
+												verticalAlignment: 'top',
+												width: '60%',
+											},
 											[
-								
-														[ 'woocommerce/cart-line-item-name', {} ],
-														[ 'woocommerce/cart-line-item-price', {} ],
-														[ 'woocommerce/cart-line-item-meta', {} ],
-														[ 'woocommerce/cart-line-item-quantity', {} ],
-														[
-															'core/button',
-															{
-																className: 'wc-block-cart-item__remove-link',
-																text: __( 'Remove item', 'woocommerce' ),
-																variant: 'link',
-															},
-														],
-								
-											]
+												[
+													'woocommerce/cart-line-item-name',
+													{},
+												],
+												[
+													'woocommerce/cart-line-item-price',
+													{},
+												],
+												[
+													'woocommerce/cart-line-item-meta',
+													{},
+												],
+												[
+													'woocommerce/cart-line-item-quantity',
+													{},
+												],
+												[
+													'core/button',
+													{
+														className:
+															'wc-block-cart-item__remove-link',
+														text: __(
+															'Remove item',
+															'woocommerce'
+														),
+														variant: 'link',
+													},
+												],
+											],
 										],
 										[
 											'core/column',
-											{ verticalAlignment: 'top', width: '20%' },
+											{
+												verticalAlignment: 'top',
+												width: '20%',
+											},
 											[
-												[ 'woocommerce/cart-line-item-total', {} ]
-											]
-										]
-									]
-								]
-							]
+												[
+													'woocommerce/cart-line-item-total',
+													{},
+												],
+											],
+										],
+									],
+								],
+							],
 						],
-					]
+					],
 				],
 				[
 					'woocommerce/cart-totals-block',
@@ -129,29 +166,58 @@ registerBlockVariation('woocommerce/cart', {
 						[
 							'core/group',
 							{
-								className: 'wp-block-woocommerce-cart-order-summary-block',
+								className:
+									'wp-block-woocommerce-cart-order-summary-block',
 							},
 							[
 								[
 									'core/heading',
 									{
 										level: 2,
-										content: __('Cart Totals', 'woocommerce'),
-										className: 'wp-block-woocommerce-cart-order-summary-heading-block wc-block-cart__totals-title',
+										content: __(
+											'Cart Totals',
+											'woocommerce'
+										),
+										className:
+											'wp-block-woocommerce-cart-order-summary-heading-block wc-block-cart__totals-title',
 									},
 								],
-								['woocommerce/cart-order-summary-coupon-form-block', {}],
-								['woocommerce/cart-order-summary-subtotal-block', {}],
-								['woocommerce/cart-order-summary-fee-block', {}],
-								['woocommerce/cart-order-summary-discount-block', {}],
-								['woocommerce/cart-order-summary-shipping-block', {}],
-								['woocommerce/cart-order-summary-taxes-block', {}],
-								['woocommerce/cart-order-summary-total-block', {}],
+								[
+									'woocommerce/cart-order-summary-coupon-form-block',
+									{},
+								],
+								[
+									'woocommerce/cart-order-summary-subtotal-block',
+									{},
+								],
+								[
+									'woocommerce/cart-order-summary-fee-block',
+									{},
+								],
+								[
+									'woocommerce/cart-order-summary-discount-block',
+									{},
+								],
+								[
+									'woocommerce/cart-order-summary-shipping-block',
+									{},
+								],
+								[
+									'woocommerce/cart-order-summary-taxes-block',
+									{},
+								],
+								[
+									'woocommerce/cart-order-summary-total-block',
+									{},
+								],
 							],
 						],
-						['woocommerce/cart-express-payment-block', {}],
-						['woocommerce/proceed-to-checkout-block', {}],
-						['woocommerce/cart-accepted-payment-methods-block', {}],
+						[ 'woocommerce/cart-express-payment-block', {} ],
+						[ 'woocommerce/proceed-to-checkout-block', {} ],
+						[
+							'woocommerce/cart-accepted-payment-methods-block',
+							{},
+						],
 					],
 				],
 			],
@@ -164,12 +230,16 @@ registerBlockVariation('woocommerce/cart', {
 					'core/heading',
 					{
 						level: 3,
-						content: __('Your cart is currently empty!', 'woocommerce'),
+						content: __(
+							'Your cart is currently empty!',
+							'woocommerce'
+						),
 						textAlign: 'center',
-						className: 'with-empty-cart-icon wc-block-cart__empty-cart__title',
+						className:
+							'with-empty-cart-icon wc-block-cart__empty-cart__title',
 					},
 				],
-				['core/separator', { className: 'is-style-dots' }],
+				[ 'core/separator', { className: 'is-style-dots' } ],
 				[
 					'woocommerce/product-new',
 					{
@@ -180,7 +250,7 @@ registerBlockVariation('woocommerce/cart', {
 			],
 		],
 	],
-});
+} );
 
 /*
 

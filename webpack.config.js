@@ -1,7 +1,7 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const WooCommerceDependencyExtractionWebpackPlugin = require( '@woocommerce/dependency-extraction-webpack-plugin' );
 const path = require( 'path' );
-const _ = require('lodash');
+const _ = require( 'lodash' );
 
 /** @type {import('webpack').Configuration} */
 const extraConfig = {
@@ -16,8 +16,8 @@ const extraConfig = {
 	},
 };
 
-module.exports = defaultConfig.map((config, index) => {
-	if (index !== 0) return config;
+module.exports = defaultConfig.map( ( config, index ) => {
+	if ( index !== 0 ) return config;
 
 	const newConfig = _.merge( config, extraConfig );
 
@@ -26,10 +26,10 @@ module.exports = defaultConfig.map((config, index) => {
 		plugins: [
 			...newConfig.plugins.filter(
 				( plugin ) =>
-					plugin.constructor.name !== 'DependencyExtractionWebpackPlugin'
+					plugin.constructor.name !==
+					'DependencyExtractionWebpackPlugin'
 			),
 			new WooCommerceDependencyExtractionWebpackPlugin(),
 		],
 	};
-	
-});
+} );

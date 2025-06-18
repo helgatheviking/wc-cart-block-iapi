@@ -10,10 +10,7 @@ import { getSetting } from '@woocommerce/settings';
 import { previewShippingRates } from '../shipping-rates';
 import { API_SITE_CURRENCY, displayForMinorUnit } from '../utils';
 
-const SHIPPING_ENABLED = getSetting(
-	'shippingEnabled',
-	true
-);
+const SHIPPING_ENABLED = getSetting( 'shippingEnabled', true );
 
 const blocksConfig = getSetting( 'wcBlocksConfig', {
 	pluginUrl: '',
@@ -200,7 +197,7 @@ export const previewCart = {
 			summary: __( 'Pennant', 'woocommerce' ),
 			short_description: __( 'Classic sports banner', 'woocommerce' ),
 			description:
-				'Keytar gluten-free butcher edison bulb DSA synth hoodie praxis venmo hammock single-origin coffee. Actually irony mukbang, 90\'s swag ethical twee XOXO.',
+				"Keytar gluten-free butcher edison bulb DSA synth hoodie praxis venmo hammock single-origin coffee. Actually irony mukbang, 90's swag ethical twee XOXO.",
 			sku: 'woo-pennant',
 			low_stock_remaining: null,
 			permalink: 'https://example.org',

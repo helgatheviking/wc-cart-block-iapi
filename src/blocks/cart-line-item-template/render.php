@@ -3,7 +3,7 @@
  * Server rendering for the Cart Line Item Template block.
  *
  * @package WooCommerce/blocks
- * 
+ *
  * @param array $attributes - The block attributes.
  * @param string $content - The block default content.
  * @param WP_Block $block - The block instance.
@@ -21,7 +21,7 @@ $classnames = 'wc-block-cart-items';
 	<caption class="screen-reader-text"><h2 class="screen-reader-text"><?php esc_html_e( 'Products in cart', 'woocommerce' ); ?></h2></caption>
 
 	<?php
-	foreach( wc()->cart->get_cart() as $cart_item_key => $cart_item ) {
+	foreach ( wc()->cart->get_cart() as $cart_item_key => $cart_item ) {
 
 		// Get the parsed block of the current Template block.
 		$parsed_block = $block->parsed_block;
@@ -34,19 +34,19 @@ $classnames = 'wc-block-cart-items';
 		$available_context = array_merge(
 			(array) $block->context,
 			array(
-				'productId' => $cart_item['product_id'],
-				'woocommerce/cartItem'   => $cart_item,
-				'isDisabled' => false,
+				'productId'            => $cart_item['product_id'],
+				'woocommerce/cartItem' => $cart_item,
+				'isDisabled'           => false,
 			)
 		);
 
 		// Render the inner blocks of the Post Template block with `dynamic` set to `false` to prevent calling
 		// `render_callback` and ensure that no wrapper markup is included.
 		$block_content = (
-			new \WP_Block(
-				$parsed_block,
-				$available_context
-			)
+		new \WP_Block(
+			$parsed_block,
+			$available_context
+		)
 		)->render( array( 'dynamic' => false ) );
 
 		$item_directives = '

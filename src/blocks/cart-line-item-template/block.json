@@ -1,8 +1,8 @@
 {
-    "name": "woocommerce/cart-line-item-template",
-    "title": "Cart line item template",
-    "version": "1.0.0",
-    "description": "Shopping cart line item.",
+	"name": "woocommerce/cart-line-item-template",
+	"title": "Cart line item template",
+	"version": "1.0.0",
+	"description": "Shopping cart line item.",
 	"category": "woocommerce",
 	"supports": {
 		"align": false,
@@ -21,12 +21,10 @@
 			}
 		}
 	},
-	"parent": [
-		"woocommerce/cart-items-redux"
-	],
+	"parent": [ "woocommerce/cart-items-redux" ],
 	"textdomain": "woocommerce",
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
+	"apiVersion": 3,
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

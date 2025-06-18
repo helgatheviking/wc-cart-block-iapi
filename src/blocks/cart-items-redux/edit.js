@@ -1,7 +1,11 @@
 /**
  * WordPress dependencies
  */
-import { InnerBlocks, useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
+import {
+	InnerBlocks,
+	useBlockProps,
+	useInnerBlocksProps,
+} from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 /*
 const TEMPLATE = [
@@ -48,18 +52,18 @@ const TEMPLATE = [
 ];
 */
 
-const Edit = ( ) => {
+const Edit = () => {
 	const blockProps = useBlockProps( {
 		className: 'wc-block-cart-items-redux',
 	} );
 
-	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		className: 'wc-cart-items-redux',
-	//	template: TEMPLATE,
-	});
+		//	template: TEMPLATE,
+	} );
 
 	return (
-		<div {...innerBlocksProps}>
+		<div { ...innerBlocksProps }>
 			<InnerBlocks />
 		</div>
 	);

@@ -30,9 +30,7 @@
 		"displayLayout": "displayLayout",
 		"enhancedPagination": "enhancedPagination"
 	},
-	"parent": [
-		"woocommerce/filled-cart-block"
-	],
+	"parent": [ "woocommerce/filled-cart-block" ],
 	"textdomain": "woocommerce",
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,

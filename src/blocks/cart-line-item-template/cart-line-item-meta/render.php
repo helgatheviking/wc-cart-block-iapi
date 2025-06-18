@@ -3,12 +3,12 @@
  * Server rendering for the Cart Line Item Meta block.
  *
  * @package WooCommerce/blocks
- * 
+ *
  * @param array $attributes - The block attributes.
  * @param string $content - The block default content.
  * @param WP_Block $block - The block instance.
  */
-$cart_item = $block->context['woocommerce/cartItem'] ?? [];
+$cart_item = $block->context['woocommerce/cartItem'] ?? array();
 
 if ( empty( $cart_item ) ) {
 	return '';

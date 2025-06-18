@@ -11,30 +11,27 @@ import { Icon, heading } from '@wordpress/icons';
 import metadata from './block.json';
 
 registerBlockType( metadata, {
-	edit: ({ context: { 'woocommerce/cartItem': cartItem } }) => {
-
+	edit: ( { context: { 'woocommerce/cartItem': cartItem } } ) => {
 		const blockProps = useBlockProps( {
 			className: 'wc-block-components-product-name',
 		} );
 
 		return (
 			<div { ...blockProps }>
-				{
-					cartItem.permalink ? (
-						<a href={ cartItem.permalink }>{ cartItem.name }</a>
-					) : (
-						<span>{ cartItem.name }</span>
-					)
-				}
+				{ cartItem.permalink ? (
+					<a href={ cartItem.permalink }>{ cartItem.name }</a>
+				) : (
+					<span>{ cartItem.name }</span>
+				) }
 			</div>
 		);
 	},
 	icon: {
-			src: (
-				<Icon
-					icon={ heading }
-					className="wc-block-editor-components-block-icon"
-				/>
-			),
-	}
+		src: (
+			<Icon
+				icon={ heading }
+				className="wc-block-editor-components-block-icon"
+			/>
+		),
+	},
 } );

@@ -12,12 +12,11 @@ import QuantitySelector from './quantity-selector';
 import metadata from './block.json';
 
 registerBlockType( metadata, {
-	edit: ({ context: { 'woocommerce/cartItem': cartItem } }) => {
-
+	edit: ( { context: { 'woocommerce/cartItem': cartItem } } ) => {
 		const blockProps = useBlockProps( {
 			className: 'wc-block-cart-item__quantity',
 		} );
-		
+
 		//console.debug('cart item test', cartItem.images[0] );
 
 		return (

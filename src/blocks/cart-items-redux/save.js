@@ -1,15 +1,15 @@
 /**
  * WordPress dependencies
  */
-import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 const Save = () => {
 	const blockProps = useBlockProps.save();
 
 	return (
-		<div { ...blockProps } >
+		<div { ...blockProps }>
 			<InnerBlocks.Content />
-		 </div>
+		</div>
 	);
 };
 

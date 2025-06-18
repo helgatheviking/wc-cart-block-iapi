@@ -30,8 +30,10 @@ registerBlockType( metadata, {
 	edit: () => {
 		const blockProps = useBlockProps();
 
-		const priceCurrency = getCurrencyFromPriceResponse( previewCart.totals );
-		
+		const priceCurrency = getCurrencyFromPriceResponse(
+			previewCart.totals
+		);
+
 		const totalAmount = Dinero( {
 			amount: parseInt( previewCart.totals.total_price, 10 ),
 			precision: previewCart.totals.currency_minor_unit,
@@ -49,5 +51,5 @@ registerBlockType( metadata, {
 				/>
 			</div>
 		);
-	}
+	},
 } );
