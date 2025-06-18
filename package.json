@@ -11,12 +11,16 @@
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"release": "npm run build && composer run makepot && npm run plugin-zip",
+		"replace": "node bin/update-version.mjs",
 		"start": "wp-scripts start --source-path=src/blocks --webpack-copy-php --experimental-modules",
 		"zip": "wp-scripts plugin-zip"
 	},
 	"devDependencies": {
 		"@woocommerce/dependency-extraction-webpack-plugin": "^3.1.0",
 		"@wordpress/scripts": "^30.18.0",
+		"replace-in-file": "^8.3.0"
 	},
 	"dependencies": {
 		"@woocommerce/settings": "^1.0.0",

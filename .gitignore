@@ -7,4 +7,6 @@ vendor/
 bookmarks.json
 composer.lock
 package-lock.json
+pnpm-lock.yaml
 *.bak
+*.zip
