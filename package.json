@@ -5,6 +5,13 @@
 	"author": "helgatheviking",
 	"license": "GPL-3.0",
 	"main": "build/index.js",
+	"files": [
+		"build",
+		"includes",
+		"languages",
+		"vendor",
+		"wc-cart-block-iapi.php"
+	],
 	"scripts": {
 		"build": "wp-scripts build --source-path=src/blocks --webpack-copy-php --experimental-modules",
 		"format": "wp-scripts format ./src",
