@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       WC Cart Block iAPI
  * Description:       WC Cart block with interactivity API
- * Version:           0.1.0
+ * Version:           1.0.0-alpha.1
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Author:            helgatheviking
@@ -11,7 +11,7 @@
  * Text Domain:       wc-cart-block-iapi
  * Update URI:        http://github.com
  *
- * @package WcCartBlock
+ * @package Backcourt\WcCartBlock\iAPI
  */
 
 namespace Backcourt\WcCartBlock\iAPI;
