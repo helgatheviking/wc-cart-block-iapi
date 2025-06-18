@@ -72,7 +72,7 @@ jobs:
 
             - name: 'Install Composer dependencies with development dependencies.'
               run: |
-                  composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+                  composer install --optimize-autoloader --no-interaction --prefer-dist
 
             - name: 'Setup NodeJS.'
               uses: actions/setup-node@v4
