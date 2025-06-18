@@ -13,14 +13,14 @@ async function updateVersion() {
   try {
     // Replace the version in the PHP file header
     const phpResults = await replaceInFile({
-      files: `${pkg.name}.php`,
-      from: /Version:\s[\d.\-a-z]+/g,
-      to: `Version: ${pkg.version}`,
+      files: path.resolve(__dirname, `../${pkg.name}.php`),
+      from: /^\s*\*\s*Version:\s*.*$/m,
+      to: ` * Version:           ${pkg.version}`,
     });
 
     // Replace the VERSION constant in the PHP file
     const versionResults = await replaceInFile({
-      files: `${pkg.name}.php`,
+      files: path.resolve(__dirname, `../${pkg.name}.php`),
       from: /const VERSION = '.*';/g,
       to: `const VERSION = '${pkg.version}';`,
     });
